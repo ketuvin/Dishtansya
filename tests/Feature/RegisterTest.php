@@ -15,10 +15,10 @@ class RegisterTest extends TestCase
             'password' => bcrypt('test123')
         ];
 
-        $this->json('POST', 'api.dishtansya.com/v1/register', $data, ['Accept' => 'application/json'])
+        $this->json('POST', 'v1/register', $data, ['Accept' => 'application/json'])
             ->assertStatus(201)
-            ->assertJsonStructure([
-                "message"
+            ->assertJson([
+                "message" => "User successfully registered"
             ]);
     }
 
@@ -33,7 +33,7 @@ class RegisterTest extends TestCase
             'password' => bcrypt('test123')
         ];
 
-        $this->json('POST', 'api.dishtansya.com/v1/register', $data, ['Accept' => 'application/json'])
+        $this->json('POST', 'v1/register', $data, ['Accept' => 'application/json'])
             ->assertStatus(422)
             ->assertJson([
                 "message" => "The given data was invalid.",
