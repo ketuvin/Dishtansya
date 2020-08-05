@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
 use App\User;
 use Tests\TestCase;
@@ -11,8 +11,8 @@ class RegisterTest extends TestCase
 {
     public function testRegisterUser() {
         $data = [
-            'email' => 'fuenteskevin2015@gmail.com',
-            'password' => bcrypt('adminadmin')
+            'email' => 'backend@multisyscorp.com',
+            'password' => bcrypt('test123')
         ];
 
         $this->json('POST', 'api.dishtansya.com/v1/register', $data, ['Accept' => 'application/json'])
@@ -24,13 +24,13 @@ class RegisterTest extends TestCase
 
     public function testEmailTaken() {
         $user = User::create([
-            'email' => 'fuenteskevin2015@gmail.com',
-            'password' => bcrypt('adminadmin')
+            'email' => 'backend@multisyscorp.com',
+            'password' => bcrypt('test123')
         ]);
 
         $data = [
-            'email' => 'fuenteskevin2015@gmail.com',
-            'password' => bcrypt('adminadmin')
+            'email' => 'backend@multisyscorp.com',
+            'password' => bcrypt('test123')
         ];
 
         $this->json('POST', 'api.dishtansya.com/v1/register', $data, ['Accept' => 'application/json'])
