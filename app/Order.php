@@ -4,6 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Swagger Annotation for Product-Schema
+/**
+ *  @OA\Schema(
+ *      @OA\Property(property="id", type="integer"),
+ *      @OA\Property(property="product_id", type="integer"),
+ *      @OA\Property(property="quantity", type="integer"),
+ * )
+ */
 class Order extends Model
 {
     public $table = 'orders';

@@ -7,6 +7,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
 
+// Swagger Annotation for User-Schema
+/**
+ *  @OA\Schema(
+ *      @OA\Property(property="id", type="integer"),
+ *      @OA\Property(property="email", type="string"),
+ *      @OA\Property(property="password", type="string"),
+ * )
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;

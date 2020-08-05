@@ -4,6 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Swagger Annotation for Product-Schema
+/**
+ *  @OA\Schema(
+ *      @OA\Property(property="id", type="integer"),
+ *      @OA\Property(property="name", type="string"),
+ *      @OA\Property(property="available_stock", type="integer"),
+ * )
+ */
 class Product extends Model
 {
     public $table = 'products';
