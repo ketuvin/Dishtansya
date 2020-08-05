@@ -19,5 +19,7 @@ Route::prefix('v1')->group(function() {
 
     Route::group(['middleware' => 'auth:api'], function() {
         Route::post('logout', 'Api\AuthController@logout');
+        Route::post('order', 'Api\OrderController@orderProduct');
+        Route::get('product/{product_id}', 'Api\OrderController@getProduct');
     });
 });
